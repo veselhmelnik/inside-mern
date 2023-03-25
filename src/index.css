@@ -1,19 +1,36 @@
-@import "~materialize-css/dist/css/materialize.min.css";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;800;900&display=swap');
 
-input.yellow-input {
-    border-bottom:  1px solid #fff!important;
-    box-shadow: 0 1px 0 0 #fff!important;
+* {
+	font-family: 'Montserrat', sans-serif;
 }
 
-input.yellow-input + label {
-    color: #ffffff!important;
+html,
+body,
+#root {
+	height: 100%;
+	margin: 0;
+	padding: 0;
 }
 
-input.yellow-input:focus + label {
-    color: #ffeb3b!important;
+a {
+	color: #997a62;
+	text-decoration: none;
 }
 
-input.yellow-input:focus {
-    border-bottom: 1px solid #ffeb3b!important;
-    box-shadow: 1px solid #ffeb3b!important;
+a:hover {
+	text-decoration: underline;
+}
+
+button {
+	background-color: #096b6a;
+	display: block;
+	padding: 15px;
+	cursor: pointer;
+	outline: none;
+	border: none;
+	border-radius: 3px;
+	font-size: 16px;
+	font-weight: bold;
+	color: #fffbf5;
+	margin: 10px 0;
 }

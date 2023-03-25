@@ -1,0 +1,139 @@
+/* -----LoginPage----- */
+.loginPage {
+    height: 100%;
+    align-items: center;
+    background: linear-gradient(120deg, #096b6a, #8cc4cc);
+}
+
+.loginPage .formWrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    border-radius: 10px;
+}
+
+.loginPage h1 {
+    text-align: center;
+    padding: 0 0 20px 0;
+    border-bottom: 1px solid silver;
+}
+
+.loginPage form {
+    padding: 0 40px;
+    box-sizing: border-box;
+
+}
+
+form .textField {
+    position: relative;
+    border-bottom: 1px solid #adadad;
+    margin: 30px 0;
+}
+
+.textField input {
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+.textField input:focus ~ label, 
+.textField input:valid ~ label {
+    top: -5px;
+    color: #096b6a;
+}
+
+.textField input:focus ~ span::before, 
+.textField input:valid ~ span::before {
+    width: 100%;
+}
+
+.textField label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    color: #adadad;
+    transform: translateY(-50%);
+    font-size: 16px;
+    pointer-events: none;
+    transition: .3s;
+}
+
+.textField span::before {
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #096b6a;
+    transition: .3s;
+}
+
+form button {
+    width: 100%;
+    height: 50%;
+    border: 1px solid;
+    border-radius: 25px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+form button:hover {
+    border-color: black;
+    transition: .3s;
+}
+
+form button:disabled {
+    background: #8cc4cc;
+    color: rgb(129, 128, 128);
+    cursor: auto;
+}
+
+.loginForm .signUpLink {
+    margin: 30px 0;
+    color: #666666;
+    text-align: center;
+}
+
+/* -----RegisterPage----- */
+
+form .ant-select {
+    margin-top: 0;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+form .ant-select-selector {
+    border: none!important;
+}
+
+form .ant-select-selection-item {
+    color: #adadad;
+    font-size: 16px;
+    pointer-events: none;
+    transition: .3s;
+}
+
+form .passField {
+    display: flex;
+    gap: 1rem;
+}
+.passField .textField {
+    margin: 0;
+}
+
+form .nameField {
+    display: flex;
+    gap: 1rem;
+}
+.nameField .textField {
+    margin-bottom: 0;
+}
+
+

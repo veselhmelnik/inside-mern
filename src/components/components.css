@@ -1,0 +1,162 @@
+/* -----Table----- */
+.dashboardTable {
+	font-weight: 600;
+    width: 100%;
+}
+
+.dashboardTable thead {
+	color: white
+}
+
+.dashboardTable td {
+	padding: 0.4rem;
+}
+
+.dashboardTable thead tr th {
+	width: 15%
+}
+
+.dashboardTable_info {
+	display: flex;
+}
+
+.dashboardTable_position {
+	color: gray;
+	font-weight: 500;
+	font-size: 0.8rem;
+}
+
+.dashboardTable_avatar {
+	margin-top: 5px;
+	margin-right: 5px;
+	padding: 0;
+	border-radius: 50%;
+}
+
+.dashboardTable_dropMenu {
+	cursor: pointer;
+} 
+
+.workType {
+    color: gray;
+}
+
+/* -----StatusBadge----- */
+.ant-badge {
+    position: absolute;
+    z-index: 100;
+    right: 55px;
+}
+/* -----StartShift----- */
+.startShift {
+    margin: 0 
+}
+
+.startShift .coordinatorCheck {
+    text-align: center;
+}
+
+/* -----SideInfo----- */
+
+.sidebar .user-avatar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.sideInfo {
+    width: 100%;
+    height: 100%;
+    margin-top: 50px;
+}
+
+
+.sidebar .ant-avatar {
+    width: 85px;
+    height: 85px;
+    
+}
+
+.sidebar .mainInfo {
+    text-align: center;
+}
+
+.sidebar .mainInfo .nickname {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    margin-top: 1rem;
+    font-weight: 1000;
+}
+
+.sidebar .mainInfo .position {
+    color: rgb(63, 62, 62);
+    font-weight: 500;
+    font-size: 0.8rem;
+    margin-top: 0.2rem;
+}
+
+
+.sidebar .ant-card-body {
+    padding: 20px 10px;
+}
+
+.sidebar .ant-card-head {
+    color: white;  
+}
+
+.sidebar .ant-card-actions {
+    background-color: #096b6a;
+    padding-top: 4px;
+}
+
+.sidebar .ant-card-actions li {
+    margin: auto 0;
+}
+
+.sidebar .ant-card-actions svg {
+    color: white;  
+    font-size: 1.1rem;
+}
+
+
+.sideInfo .workInfo {
+    margin: auto;
+    width: 85%;
+    margin-top: 4rem;
+    margin-bottom: 8rem;
+    background-color: #096b6a;
+    color: white;  
+    text-align: center;
+}
+
+.sidebar .shiftSelect, .shiftSelect .ant-select {
+    width: 100%;
+    
+}
+.sidebar .shiftSelect {
+    margin-bottom: 0.8rem;
+}
+
+.sideInfo .workInfo a {
+    font-weight: bold;
+    color: #CCB1A3;  
+}
+
+.sidebar button:disabled {
+    background: #8cc4cc;
+    color: rgb(129, 128, 128);
+    cursor: auto;
+}
+
+.sidebar .logout {
+    position: absolute;
+    bottom: 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.sidebar .logout span{
+    margin-left: 0.5rem;
+}

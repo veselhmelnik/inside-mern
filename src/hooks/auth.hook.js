@@ -1,34 +1,35 @@
-import { useCallback, useEffect, useState } from "react"
+import { useCallback} from "react";
+import { useDispatch } from "react-redux";
+import { updateAuthentication } from "../store/authenticationSlice";
 
-const storageName = 'userData';
+const storageName = "userData";
 
 const useAuth = () => {
-    const [token, setToken] = useState(null);
-    const [userId, setUserId] = useState(null);
+  const dispatch = useDispatch();
 
-    const login = useCallback((jwtToken, id) => {
-        setToken(jwtToken);
-        setUserId(id);
+  const login = useCallback((jwtToken, id) => {
+    localStorage.setItem(
+      storageName,
+      JSON.stringify({
+        userId: id,
+        token: jwtToken,
+      })
+    );
+    dispatch(updateAuthentication());
+  }, []);
 
-        localStorage.setItem(storageName, JSON.stringify({
-            userId: id, token: jwtToken
-        }))
-    }, [])
-    const logout = useCallback(() => {
-        setToken(null);
-        setUserId(null);
-        localStorage.removeItem(storageName);
-    }, [])
+  const logout = useCallback(() => {
+    localStorage.removeItem(storageName);
+    const state = {
+      token: null,
+      userId: null,
+      expirationTokenDate: 0,
+      isLoading: false,
+    };
+    dispatch(updateAuthentication());
+  }, []);
 
-    useEffect(() => {
-        const data = JSON.parse(localStorage.getItem(storageName));
+  return { login, logout };
+};
 
-        if (data && data.token) {
-            login(data.token, data.userId);
-        }
-    }, [login])
-
-    return {login, logout, token, userId}
-}
-
-export default useAuth
+export default useAuth;

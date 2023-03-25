@@ -1,0 +1,71 @@
+/* -----Header----- */
+
+.ant-layout-header {
+    background: linear-gradient(90deg, #2c9c8c,#8cc4cc)!important;
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 20px 20px -20px;
+}
+
+.header-navbar {
+    justify-content: space-between;
+    position: relative;
+    display: flex;
+}
+
+.header-navbar .logo-inside {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-top: -10px;
+    color: #fff;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.header-navbar .logo-workBoard {
+    position: absolute;
+    color: #fff;
+    top: 16px;
+}
+
+.header-navbar .logo a {
+    text-decoration: none;
+}
+
+.header-navbar ul {
+    display: flex;
+    list-style-type: none;
+    margin: auto 0;
+    margin-top: 0;
+}
+
+.header-navbar ul li a {
+    color: #443326;
+    padding: 20px 20px;
+    font-size: 1rem;
+}
+
+.header-navbar ul li:hover a {
+    background-color: #096b6a;
+    color: #e7d8d0;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: 0s;
+
+}
+
+/* -----Sidebar----- */
+.ant-layout-sider {
+    background: linear-gradient(0deg, #2c9c8c,#8cc4cc)!important;
+    box-shadow: rgba(0, 0, 0, 0.45) 15px 25px 20px 20px;
+}
+
+.sidebar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    flex-direction: column;
+
+}
+/* -----Content----- */
+.ant-layout-content {
+    margin: 3rem 2rem;
+}

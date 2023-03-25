@@ -1,24 +1,41 @@
 import { Routes, Route } from "react-router-dom";
-import LinksPage from "./pages/LinksPage";
-import CreatePage from "./pages/CreatePage";
-import DetailPage from "./pages/DetailPage";
-import AuthPage from "./pages/AuthPage";
+import RegisterPage from "./pages/RegisterPage";
+import LoginPage from "./pages/LoginPage";
+import DashboardPage from "./pages/DashboardPage";
+import AppLayout from "./Layout/AppLayout";
+import { useDispatch, useSelector } from "react-redux";
+import Loader from "./components/Loader";
+import { useEffect } from "react";
+import { updateAuthentication } from "./store/authenticationSlice";
+import { CoordinatorPage } from "./pages/coordinatorPage";
 
-export const AppRoutes = ({isAuthenticated}) => {
-  if (isAuthenticated) {
+export const AppRoutes = () => {
+  const dispatch = useDispatch();
+  const {token, isLoading, isExpired} = useSelector((state) => state.authentication);
+  
+  useEffect(() => {
+    dispatch(updateAuthentication());
+  },[dispatch])
+
+  if (isLoading) return <Loader />;
+
+  if (token && !isExpired) {
     return (
-      <Routes>
-        <Route path="/links" element={<LinksPage />} />
-        <Route path="/create" element={<CreatePage />} />
-        <Route path="/detail/:id" element={<DetailPage />} />
-        <Route path="*" element={<CreatePage />} />
-      </Routes>
+      <AppLayout>
+        <Routes>
+          <Route path="/dashboard" element={<DashboardPage />} />
+          <Route path="/coordinator" element={<CoordinatorPage />} />
+          <Route path="*" element={<DashboardPage />} />
+        </Routes>
+      </AppLayout>
     );
   }
+
   return (
     <Routes>
-        <Route path="/" element={<AuthPage/>}></Route>
-        <Route path="*" element={<AuthPage/>} />
+      <Route path="/login" element={<LoginPage />} />
+      <Route path="*" element={<LoginPage />} />
+      <Route path="/register" element={<RegisterPage />} />
     </Routes>
   );
 };
