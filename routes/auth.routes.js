@@ -18,7 +18,6 @@ router.post(
   async (req, res) => {
     try {
       const errors = validationResult(req);
-
       if (!errors.isEmpty()) {
         return res
           .status(400)
@@ -28,21 +27,21 @@ router.post(
           });
       }
 
-      const { email, password } = req.body;
-
-      const candidate = await User.findOne({ email });
-
+      const { email, password, userName, fullName, position } = req.body;
+      const candidate = await User.findOne({ email});
+      
       if (candidate) {
         return res
-          .status(400)
-          .json({ message: "Такой пользователь уже существует" });
+        .status(400)
+        .json({ message: "Такой пользователь уже существует" });
       }
-
+      
       const hashedPassword = await bcrypt.hash(password, 12);
-      const user = new User({ email, password: hashedPassword });
-
+      const user = new User({ email, password: hashedPassword, userName, fullName, position});
+      
       await user.save();
 
+      
       res.status(201).json({ message: "Пользователь создан" });
     } catch (e) {
       res
@@ -51,6 +50,10 @@ router.post(
     }
   }
 );
+
+// /api/auth/exp
+
+router.get("/exp")
 
 // /api/auth/login
 router.post(
@@ -89,7 +92,7 @@ router.post(
     const token = jwt.sign(
         {userId: user.id},
         config.get('jwtSecret'),
-        {expiresIn: '1h'}
+        {expiresIn: '90d'}
     )
 
     res.json({token, userId: user.id});
