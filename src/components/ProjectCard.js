@@ -23,7 +23,7 @@ const ProjectCard = ({ workType, work, userId }) => {
       work: "",
       workType: "",
       time: Date.now(),
-      status: "waiting",
+      userStatus: "waiting",
     };
     await updateUser({ body, userId: userId });
   };
@@ -65,7 +65,7 @@ const ProjectCard = ({ workType, work, userId }) => {
     return (
       <Card
         className="workInfo"
-        title="Проект"
+        title={workType}
         size="small"
         actions={[
           <div>
