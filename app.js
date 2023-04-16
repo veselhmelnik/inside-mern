@@ -11,6 +11,7 @@ app.use('/api/auth', require('./routes/auth.routes'));
 app.use('/api/link', require('./routes/link.routes'));
 app.use('/api/users', require('./routes/users.routes'));
 app.use('/t', require('./routes/redirect.routes'));
+app.use('/api/exams', require('./routes/exams.routes'));
 
 if (process.env.NODE_ENV === 'production') {
     app.use('/', express.static(path.join(__dirname, 'client', 'build')));

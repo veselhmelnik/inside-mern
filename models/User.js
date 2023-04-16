@@ -12,7 +12,7 @@ const schema = new Schema({
     workType: {type: String},
     time: {type: String},
     isOnline: {type: Boolean},
-    isCoordinator: {type: Boolean},
+    isCoordinator: {type: String},
 })
 
 module.exports = model('User', schema)

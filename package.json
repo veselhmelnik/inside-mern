@@ -32,10 +32,12 @@
     "react-redux": "^8.0.5",
     "react-select": "^5.7.0",
     "redux-thunk": "^2.4.2",
-    "shortid": "^2.2.16"
+    "shortid": "^2.2.16",
+    "sweetalert2": "^11.7.3"
   },
   "devDependencies": {
     "concurrently": "^7.6.0",
-    "nodemon": "^2.0.20"
+    "nodemon": "^2.0.20",
+    "typescript-plugin-css-modules": "^5.0.1"
   }
 }
